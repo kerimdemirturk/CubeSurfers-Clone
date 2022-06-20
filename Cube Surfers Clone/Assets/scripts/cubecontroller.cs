@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class cubecontroller : MonoBehaviour
 {
     public float forwardSpeed = 2.0f;
     public float horizontalSpeed= 2.0f;
-    public float horizontal;
-    public float Xborder = 2.13f;
-    private Vector3 temp; // for holding vector3 sclae value
-    private int cubesCounter = 0 ; // count to cubes number for updating cubes size
+    private float horizontal;
+    float Xborder = 2.13f;
+    
+    
 
 
 
@@ -21,8 +22,7 @@ public class cubecontroller : MonoBehaviour
     void Update()
     {
         borders();
-        temp = transform.localScale; //take scale of cubes
-        
+           
 
     }
 
@@ -48,18 +48,13 @@ public class cubecontroller : MonoBehaviour
         {
             transform.position = new Vector3(-Xborder, transform.position.y, transform.position.z);
         }
+        
+        
     }
  
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "gamecubes")
-        {
+   
 
-            Destroy(other.gameObject);
-            cubesCounter += 1; // at every trigger event count +1
-            temp.y += cubesCounter; // update scale.y 
-            transform.localScale = temp; //equalize scale
- 
-        }
-    }
+    
+    
+
 }

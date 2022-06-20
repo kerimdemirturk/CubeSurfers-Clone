@@ -7,6 +7,8 @@ TagManager:
   - cubes
   - sphere
   - gamecubes
+  - wall
+  - taker
   layers:
   - Default
   - TransparentFX

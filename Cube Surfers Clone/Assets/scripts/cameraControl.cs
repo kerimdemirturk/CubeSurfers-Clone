@@ -4,35 +4,14 @@ using UnityEngine;
 
 public class cameraControl : MonoBehaviour
 {
-    public GameObject cube;
-    public Vector3 offset = new Vector3(4, 0.875f, 0.2f);
-    
+    public GameObject lookpoz;
+    public Vector3 offset;
 
-
-
-
-    void Start()
+    private void LateUpdate()
     {
-        
-
-
-
+        transform.position = Vector3.Lerp(transform.position, lookpoz.transform.position + offset, Time.deltaTime);
     }
 
-    
-    void LateUpdate()
-    {
-        transform.position = cube.transform.position+offset;
-    }
 
-    /*
-    public Vector3 offset()
-    {
-        float cubeposX = (transform.position.x) + (cube.transform.position.x);
-        float cubeposY = (transform.position.y) - (cube.transform.position.y);
-        Vector3 offset = new Vector3(cubeposX, cubeposY, transform.position.z);
-        return offset;
-    }
-    */
-    
+
 }
