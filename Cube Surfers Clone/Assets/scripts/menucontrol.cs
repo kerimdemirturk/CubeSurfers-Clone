@@ -7,18 +7,20 @@ using UnityEditor;
 
 public class menucontrol : MonoBehaviour
 {
-   
+
+
     public void startbutton()
     {
         SceneManager.LoadScene(1);
     }
     public void quitGame()
     {
-        EditorApplication.ExitPlaymode();
+        
         Application.Quit();
     }
     public void backMainMenu()
     {
         SceneManager.LoadScene(0);
     }
+    
 }

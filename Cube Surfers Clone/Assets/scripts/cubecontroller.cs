@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class cubecontroller : MonoBehaviour
 {
@@ -16,12 +17,13 @@ public class cubecontroller : MonoBehaviour
 
     void Start()
     {
-
+       
     }
 
     void Update()
     {
         borders();
+        nextLevel();
            
 
     }
@@ -51,10 +53,18 @@ public class cubecontroller : MonoBehaviour
         
         
     }
- 
-   
+    public void nextLevel()
+    {
+        if (transform.position.z > 49)
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
 
-    
-    
+
+
+
+
+
 
 }

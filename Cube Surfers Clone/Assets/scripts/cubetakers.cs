@@ -29,6 +29,7 @@ public class cubetakers : MonoBehaviour
             other.gameObject.transform.parent = maincube.transform;
             Debug.Log(yHigh);
             coin.Play();
+            
         }
     }
     public void Ydecrease()
